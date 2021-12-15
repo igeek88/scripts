@@ -1,4 +1,4 @@
-# Iván Weinberg's scripts for Powershell
+# Iván Weinberg's scripts
 
 ## Intro
 
