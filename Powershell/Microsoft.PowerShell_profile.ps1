@@ -1,8 +1,11 @@
 Write-Output "If this appears, ($USERPROFILE)\Documents\PowerShell\Microsoft.PowerShell_profile.ps1 was loaded successfully.
 
-Setting Aliases"
+Removing old version of $env:userprofile\Documents\PowerShell\aliases.ps1"
+Remove-Item "$env:userprofile\Documents\PowerShell\aliases.ps1"
 
+Write-Output "Copying new aliases.ps1 script to $env:userprofile\Documents\PowerShell\ and executing it." 
 Set-Location "$env:userprofile\Documents\PowerShell\"
+Copy-Item -Path "$env:userprofile\git\mine\scripts\Powershell\aliases.ps1" -Destination "$env:userprofile\Documents\PowerShell\"
 .\aliases.ps1
 
 <# Write-Output "Setting variables to perform login
