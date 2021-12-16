@@ -1,8 +1,9 @@
 Write-Output 'Setting aliases, functions and variables.'
 
-# Variables
-$dn="default-namespace"
-$sl=Read-Host "Enter desired service to read logs from"
+# Initialising variables
+$dn="deafault-namespace" # Default namespace
+$n="" # Desired namespace
+$sl="" # Set with desired service to read logs from
 
 # Aliases
 Set-Alias -Name k -Value kubectl_1.22.0.exe
