@@ -4,8 +4,8 @@ Removing old version of $env:userprofile\Documents\PowerShell\aliases.ps1"
 Remove-Item "$env:userprofile\Documents\PowerShell\aliases.ps1"
 
 Write-Output "Copying new aliases.ps1 script to $env:userprofile\Documents\PowerShell\ and executing it." 
-Set-Location "$env:userprofile\Documents\PowerShell\"
 Copy-Item -Path "$env:userprofile\git\mine\scripts\Powershell\aliases.ps1" -Destination "$env:userprofile\Documents\PowerShell\"
+Set-Location "$env:userprofile\Documents\PowerShell\"
 .\aliases.ps1
 
 <# Write-Output "Setting variables to perform login
@@ -22,14 +22,13 @@ az login --use-device-code
 
 Write-Output 'Setting account: Remember to change default set variables if needed'
 az account set --subscription $adoSubId
-az aks get-credentials --resource-group $adoRGName --name $adoAKSName<#
+az aks get-credentials --resource-group $adoRGName --name $adoAKSName
 
-<#
 Commands to be run manually, if needed:
 $rg="" #desired env name
 $aks="" #desired aks env cluster name 
-$sub="" #desired env subscrition ID (i.e. )
+$sub="" #desired env subscrition ID
 az login && az account set --subscription $env:sub
 az aks get-credentials --resource-group $env:rg --name $env:aks
 
-$adoSubId=Read-Host "Enter subscriptionId" -MaskInput#>
+$adoSubId=Read-Host "Enter subscriptionId" -MaskInput #>
